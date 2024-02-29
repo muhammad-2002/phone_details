@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phone Details- api</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <header class="bg-[#0D6EFD0D] h-[600px] md:min-h-lvh">
+      <section class="container mx-auto ader">
+        <div class="navbar">
+          <div class="navbar-start">
+            <div class="dropdown">
+              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </div>
+            </div>
+            <a class="btn btn-ghost text-xl">Hot Gadgets</a>
+          </div>
+
+          <div class="navbar-end">
+            <a class="btn text-white bg-[#0D6EFD]">Buy Now</a>
+          </div>
+        </div>
+
+        <div class="text-center space-y-3 mt-0 md:mt-16">
+          <h1 class="text-black text-5xl font-bold">Apple Iphone 13 Pro Max</h1>
+          <p class="w-[90%] md:w-[50%] mx-auto">
+            There are many variations of passages of Lorem Ipsum available, but
+            the majority have suffered alteration in some form, by injected
+            humou.
+          </p>
+          <a class="btn text-white bg-[#0D6EFD]">Buy Now</a>
+        </div>
+      </section>
+    </header>
+    <div class="flex justify-center items-end -mt-[250px] lg:-mt-[350px] gap-0">
+      <img class="hidden md:block" src="./images/pngwing 3.png" />
+      <img src="./images/big.png" />
+      <img class="hidden md:block" src="./images/pngwing 3.png" />
+    </div>
+
+    <main class="container mx-auto">
+      <div>
+        <h1 class="text-center text-6xl text-black font-bold">
+          Search your Phone
+        </h1>
+        <div class="flex justify-center items-center gap-4 mt-9">
+          <label class="form-control w-full max-w-xs">
+            <input
+              type="text"
+              id="search-phone"
+              placeholder="Search any Phone"
+              class="input input-bordered w-full max-w-xs"
+            />
+          </label>
+          <button onclick="searchPhone()" class="btn btn-primary">
+            Search
+          </button>
+        </div>
+      </div>
+      <div id="loading-spinners" class="text-center mt-7 hidden">
+        <span class="loading loading-spinner loading-lg"></span>
+      </div>
+      <div
+        id="not-exist"
+        class="text-center text-red-600 text-3xl font-bold mt-4 hidden"
+      >
+        <p>Sorry Search Item not exist</p>
+      </div>
+      <div
+        id="phone-container"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-9 mt-9"
+      ></div>
+
+      <div id="see-more" class="text-center mt-4 hidden">
+        <button onclick="ShowAll()" class="btn btn-outline btn-warning">
+          See More
+        </button>
+      </div>
+      <!-- You can open the modal using ID.showModal() method -->
+      <dialog id="my_modal_3" class="modal">
+        <div class="modal-box">
+          <form method="dialog">
+            <button
+              class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+            >
+              ✕
+            </button>
+          </form>
+          <h3 class="font-bold text-lg">Hello!</h3>
+          <p class="py-4">Press ESC key or click on ✕ button to close</p>
+        </div>
+      </dialog>
+    </main>
+    <script src="./js/phone.js"></script>
+  </body>
+</html>
