@@ -1,4 +1,4 @@
-const loadAllData =async(inputValue, isshowAll)=>{
+const loadAllData =async(inputValue =13, isshowAll)=>{
     const res = await fetch(`https://openapi.programming-hero.com/api/phones?search=${inputValue}`)
     const data = await res.json()
     const phone = data.data
@@ -29,7 +29,6 @@ const displayPhones=(phone,isshowAll)=>{
         
     }
     
-    const showDeatils = document.getElementById('my_modal_3')
     phone.forEach(element => {
         const phoneCard = document.createElement('div')
         phoneCard.classList = 'card w-96 bg-base-100 shadow-xl'
@@ -88,11 +87,34 @@ const loding =(isLoding)=>{
 }
 
 const showDetails=async(id)=>{
-  console.log('clicked',id)
+  
   //load data
   const res = await fetch(`https://openapi.programming-hero.com/api/phone/${id}`)
   const data = await res.json()
-  console.log(data.data)
+  showPhoneDetalish(data.data)
+}
+
+const showPhoneDetalish =(phone)=>{
+  console.log(phone)
+  my_modal_3.showModal()
+  const showDetails= document.getElementById('show-details-container')
+
+  showDetails.innerHTML = `
+  <div class='flex justify-center items-center'>
+  <img  src ='${phone.image}'/>
+  </div>
+  <div class=' w-full space-y-4'>
+  <h1 class='text-4xl font-bold  '>${phone.name}</h1>
+  <p class='text-base  '>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+  <h1 class='text-base   '> Bluetooth :${phone.others.Bluetooth}</h1>
+  <h1 class='text-base   '> Memory :${phone.mainFeatures.memory}</h1>
+  <h1 class='text-base   '>Storage :${phone.mainFeatures.storage}</h1>
+  <h1 class='text-base   '> Gps :${phone.others?.GPS}</h1>
+  <h1 class='text-base   '> Barand :${phone.brand}</h1>
+  
+  </div>`
+ 
 }
 
 
+loadAllData()

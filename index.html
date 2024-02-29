@@ -98,7 +98,7 @@
         </button>
       </div>
       <!-- You can open the modal using ID.showModal() method -->
-      <dialog id="my_modal_3" class="modal">
+      <dialog id="my_modal_3" class="modal h-auto">
         <div class="modal-box">
           <form method="dialog">
             <button
@@ -107,8 +107,10 @@
               ✕
             </button>
           </form>
-          <h3 class="font-bold text-lg">Hello!</h3>
-          <p class="py-4">Press ESC key or click on ✕ button to close</p>
+          <div
+            id="show-details-container"
+            class="flex justify-start items-center flex-col space-y-4"
+          ></div>
         </div>
       </dialog>
     </main>
