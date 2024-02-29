@@ -109,7 +109,7 @@ const showPhoneDetalish =(phone)=>{
   <h1 class='text-base   '> Bluetooth :${phone.others.Bluetooth}</h1>
   <h1 class='text-base   '> Memory :${phone.mainFeatures.memory}</h1>
   <h1 class='text-base   '>Storage :${phone.mainFeatures.storage}</h1>
-  <h1 class='text-base   '> Gps :${phone.others?.GPS}</h1>
+  <h1 class='text-base   '> Gps :${phone.others?.GPS ||'no data'}</h1>
   <h1 class='text-base   '> Barand :${phone.brand}</h1>
   
   </div>`
